@@ -17,9 +17,10 @@ export async function initializeAudio(): Promise<void> {
   if (isInitialized) return;
   
   try {
-    // Create audio elements
-    beepAudio = new Audio('/sounds/beep.mp3');
-    completeAudio = new Audio('/sounds/complete.mp3');
+    // Create audio elements with correct base path
+    const basePath = import.meta.env.BASE_URL;
+    beepAudio = new Audio(`${basePath}sounds/beep.mp3`);
+    completeAudio = new Audio(`${basePath}sounds/complete.mp3`);
     
     // Preload the audio files
     beepAudio.preload = 'auto';
