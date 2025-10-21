@@ -1,0 +1,55 @@
+/* Mobile-First Responsive Breakpoints */
+
+/* Extra small devices (default, no media query needed) */
+/* 320px - 639px: Mobile phones */
+
+/* Small devices (landscape phones, small tablets) */
+/* 640px and up */
+@media (min-width: 640px) {
+  .container-sm {
+    max-width: 640px;
+  }
+}
+
+/* Medium devices (tablets) */
+/* 768px and up */
+@media (min-width: 768px) {
+  .container-md {
+    max-width: 768px;
+  }
+}
+
+/* Large devices (desktops) */
+/* 1024px and up */
+@media (min-width: 1024px) {
+  .container-lg {
+    max-width: 1024px;
+  }
+}
+
+/* Extra large devices (large desktops) */
+/* 1280px and up */
+@media (min-width: 1280px) {
+  .container-xl {
+    max-width: 1280px;
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 639px) {
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
+}

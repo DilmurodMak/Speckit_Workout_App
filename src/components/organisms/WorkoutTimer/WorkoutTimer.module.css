@@ -1,0 +1,38 @@
+/* WorkoutTimer organism - complete workout execution interface */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.timer {
+  width: 100%;
+}
+
+.info {
+  width: 100%;
+}
+
+.controls {
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 1rem;
+    padding: 1rem;
+  }
+}

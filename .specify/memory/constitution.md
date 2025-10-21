@@ -1,50 +1,74 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Workout Set Static Web App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Static-First Architecture
+All pages must be pre-rendered at build time or served as static HTML/CSS/JavaScript files. No server-side rendering required unless explicitly specified. Assets must be optimized for fast delivery via CDN.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Mobile-First Responsive Design
+All UI components must be designed mobile-first with responsive breakpoints for tablet and desktop. Touch targets must be minimum 44x44px. All interactions must work on touch devices.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Performance Standards
+- Page load time: Under 3 seconds on 3G networks
+- First Contentful Paint: Under 1.5 seconds
+- Images must be optimized and lazy-loaded
+- CSS/JS must be minified and bundled
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Accessibility Requirements
+- WCAG 2.1 AA compliance minimum
+- Semantic HTML5 elements required
+- Proper ARIA labels for interactive elements
+- Keyboard navigation support for all interactive features
+- Color contrast ratio minimum 4.5:1
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Browser Compatibility
+Support latest 2 versions of Chrome, Firefox, Safari, and Edge. Progressive enhancement approach for older browsers.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technical Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### File Structure
+```
+/
+├── index.html          # Main entry point
+├── css/                # Stylesheets
+├── js/                 # JavaScript files
+├── images/             # Image assets
+└── assets/             # Other static assets
+```
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Technology Stack
+- HTML5 for markup
+- CSS3 (or preprocessor like Sass/Less)
+- Vanilla JavaScript or modern framework (React, Vue, etc.)
+- Static site generator optional (11ty, Jekyll, Hugo, etc.)
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Asset Management
+- Images: WebP format preferred, PNG/JPG fallbacks
+- Fonts: WOFF2 format, subset for performance
+- Icons: SVG format preferred
+
+## Development Standards
+
+### Code Quality
+- Valid HTML5 markup (W3C validation)
+- CSS follows BEM or similar naming convention
+- JavaScript: ES6+ with consistent style (ESLint)
+- No inline styles or scripts (except critical CSS)
+
+### Version Control
+- All code must be in version control (Git)
+- Feature branches for new work
+- Clear commit messages
+
+### Testing
+- Manual cross-browser testing required
+- Lighthouse audit score minimum 90 for Performance, Accessibility, Best Practices
+- Visual regression testing for UI changes
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution defines the baseline standards for all static web app features. All specifications, plans, and implementations must comply with these principles.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Violations must be justified and documented. Simpler alternatives should be explored before adding complexity.
+
+**Version**: 1.0.0 | **Ratified**: 2025-10-17 | **Last Amended**: 2025-10-17
